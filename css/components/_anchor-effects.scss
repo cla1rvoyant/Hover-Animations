@@ -1,0 +1,175 @@
+/* Font Color */
+.font-color{
+    transition: color .2s ease-in-out;
+    &:hover {
+            color: var(--mycol-2) !important;
+    }
+}
+
+/* Text Shadow */
+.text-shadow {
+    transition: text-shadow .2s ease-in-out;
+    &:hover {
+        text-shadow: 2px 3px 5px rgba($color: #000000, $alpha: .45)
+    }
+}
+
+/* Grow & Shadow */
+.grow-and-shadow {
+    transition: all .2s ease-in-out;
+    &:hover {
+        text-shadow: 2px 3px 5px rgba($color: #000000, $alpha: .45);
+        transform: scale(1.2) !important;     
+    }
+}
+
+/* Box Shadow */
+.box-shadow{
+    transition: box-shadow .2s ease-in-out;
+    &:hover{
+        box-shadow: inset 0 -.5rem var(--accent);
+    }
+}
+
+/* BG Color */
+.bg-color {
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        width: calc(100% + 10px);
+        height: calc(100% + 10px);
+        top: -5px;
+        left: -5px;
+        border-radius: 3px;
+        transition: background .2s ease-in-out;
+    }
+    &:hover::before {
+        background: var(--orange3);
+    }
+}
+
+/* Underline */
+.underline {
+    &::before{
+        content: '';
+        position: absolute;
+        height: 0;
+        width: 100%;
+        left: 0;
+        bottom: -5px;
+        background: var(--accent);
+        transition: height .2s ease-in-out;
+    }
+    &:hover::before{
+        height: 3px;
+    }
+}
+
+/* Underline From Left */
+.underline-from-left {
+    &::before{
+        content: '';
+        position: absolute;
+        height: 3px;
+        width: 0;
+        left: 0;
+        bottom: -5px;
+        background: var(--accent);
+        transition: width .2s ease-in-out;
+    }
+    &:hover::before{
+        width: 100%;
+    }
+}
+
+/* Underline From Right */
+.underline-from-right {
+    &::before{
+        content: '';
+        position: absolute;
+        height: 3px;
+        width: 0;
+        right: 0;
+        bottom: -5px;
+        background: var(--accent);
+        transition: width .2s ease-in-out;
+    }
+    &:hover::before{
+        width: 100%;
+    }
+}
+
+/* Underline From Center */
+.underline-from-center {
+    &::before{
+        content: '';
+        position: absolute;
+        height: 3px;
+        width: 0;
+        right: 51%;
+        left: 51%;
+        bottom: -5px;
+        background: var(--accent);
+        transition: all .2s ease-in-out;
+    }
+    &:hover::before{
+        left: 0;
+        right: 0;
+        width: 100%;
+    }
+}
+
+/* Stack */
+.stack {
+    &::before {
+        content: '';
+        position: absolute;
+        height: 3px;
+        width: 0;
+        left: 0;
+        bottom: -5px;
+        background: var(--accent);
+        transition: width .2s ease-in-out;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        height: 3px;
+        width: 0;
+        right: 0;
+        top: -5px;
+        background: var(--accent);
+        transition: width .2s ease-in-out;
+    }
+    &:hover::before, &:hover::after {
+        width: 100%;
+    }
+}
+
+/* Cage */
+.cage {
+    &::before , &::after {
+        content: '';
+        position: absolute;
+        width: calc(100% + 10px);
+        height: calc(100% + 10px);
+        top: -5px;
+        left: -5px;
+        transition: all .2s ease-in-out;
+        border-style: solid;
+        border-color: var(--accent);
+        border-radius: 3px;
+    }
+    &:before {
+      border-width: 3px 0 3px 0;
+      transform:  scaleX(0);
+    }
+    &:after {
+      border-width: 0 3px 0 3px;
+      transform:  scaleY(0);
+    }
+    &:hover:before, &:hover:after {
+      transform:  scale(1, 1);
+}
+}

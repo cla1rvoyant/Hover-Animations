@@ -1,0 +1,362 @@
+/* Background Color Fade */
+.bg-color-fade{
+    transition: all .2s ease-in-out;
+    &:hover {
+        background: var(--mycol-2) !important;
+    }
+}
+
+/* Background Gradient Fade */
+.bg-gradient-fade{
+    transition: background .2s ease-in-out;
+    &:hover {
+        background: transparent !important;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        transition: opacity .2s ease-in-out;
+        background: linear-gradient(45deg, var(--mycol-2) 0%, var(--dark3) 100%) !important;
+        opacity: 0;
+        z-index: -1;
+    }
+    &:hover::after {
+        opacity: 1;
+    }
+}
+
+/* Background Swipe Right */
+.bg-swipe-right {
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0;
+        background: var(--mycol-2);
+        transition: width .2s ease-in-out;
+    }
+    &:hover::after {
+        width: 100%;
+    }
+}
+
+/* Background Swipe Left */
+.bg-swipe-left {
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 0;
+        background: var(--mycol-2);
+        transition: width .2s ease-in-out;
+    }
+    &:hover::after {
+        width: 100%;
+    }
+}
+
+/* Background Swipe Top */
+.bg-swipe-top {
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+        left: 0;
+        height: 0;
+        width: 100%;
+        background: var(--mycol-2);
+        transition: height .2s ease-in-out;
+    }
+    &:hover::after {
+        height: 100%;
+    }
+}
+
+/* Background Swipe Bottom */
+.bg-swipe-bot {
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        height: 0;
+        width: 100%;
+        background: var(--mycol-2);
+        transition: height .2s ease-in-out;
+    }
+    &:hover::after {
+        height: 100%;
+    }
+}
+
+/* Background Swipe Top-Right */
+/* .bg-swipe-top-right {
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+        left: 0;
+        height: 0;
+        width: 0;
+        background: var(--mycol-2);
+        transition: .2s ease-in-out;
+        transition-property:  bottom, left, width, height;
+        border-radius: 100px;
+    }
+    &:hover::after {
+        bottom: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+    }
+} */
+
+/* Swipe From Center */
+.swipe-from-center {
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        height: 100%;
+        width: 0;
+        top: 0;
+        left: 51%;
+        right: 51%;
+        background: var(--mycol-2);
+        transition: .2s ease-in-out;
+        transition-property: left, right, width;
+    }
+    &:hover::after {
+        left: 0;
+        right: 0;
+        width: 100%;
+    }
+}
+
+/* Swipe Vertically From Center */
+.swipe-v-from-center {
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        height: 0;
+        width: 100%;
+        left: 0;
+        top: 51%;
+        bottom: 51%;
+        background: var(--mycol-2);
+        transition: .2s ease-in-out;
+        transition-property: top, bottom, height;
+    }
+    &:hover::after {
+        top: 0;
+        bottom: 0;
+        height: 100%;
+    }
+}
+
+/* Grow From Center */
+.grow-from-center {
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        height: 0;
+        width: 0;
+        left: 51%;
+        right: 51%;
+        top: 51%;
+        bottom: 51%;
+        border-radius: 50%;
+        background: var(--mycol-2);
+        transition: all .2s ease-in-out;
+    }
+    &:hover::after {
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        border-radius: 0;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+/* Shrink To Center */
+.shrink-to-center {
+    background: var(--mycol-2) !important;
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        border-radius: 0;
+        height: 100%;
+        width: 100%;
+        background: var(--mycol-1);
+        transition: all .2s ease-in-out;
+    }
+    &:hover::after {
+        height: 0;
+        width: 0;
+        left: 51%;
+        right: 51%;
+        top: 51%;
+        bottom: 51%;
+        border-radius: 50%;   
+    }
+}
+
+/* Glaze From Left */
+.glaze-from-left {
+    &:after, &:before {
+        padding: 18px 0 11px;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: calc(-100% - 30px);
+        height: 100%;
+        width: calc(100% + 20px);
+        transform: skew(-25deg);
+      }
+      &:after {
+        background: var(--light3);
+        transition: left .4s ease-in-out;
+        z-index: -2;
+        opacity: 0.8;
+      }
+      &:before {
+        background: var(--mycol-2);
+        z-index: -1;
+        transition: left .2s ease-in-out;
+      }
+      &:hover {
+        &:after {
+          left: calc(0% - 10px);
+          transition: left 0.2s ease-in-out;
+        }
+        &:before {
+          left: calc(0% - 10px);
+          transition: left .4s ease-in-out;
+        }
+      }
+}
+
+/* Glaze From Right */
+.glaze-from-right {
+    &:after, &:before {
+        padding: 18px 0 11px;
+        content: '';
+        position: absolute;
+        top: 0;
+        right: calc(-100% - 30px);
+        height: 100%;
+        width: calc(100% + 20px);
+        transform: skew(25deg);
+      }
+      &:after {
+        background: var(--light3);
+        transition: right .4s ease-in-out;
+        z-index: -2;
+        opacity: 0.8;
+      }
+      &:before {
+        background: var(--mycol-2);
+        z-index: -1;
+        transition: right .2s ease-in-out;
+      }
+      &:hover {
+        &:after {
+          right: calc(0% - 10px);
+          transition: right 0.2s ease-in-out;
+        }
+        &:before {
+          right: calc(0% - 10px);
+          transition: right .4s ease-in-out;
+        }
+      }
+}
+
+/* Ribbon From Left */
+.ribbon-from-left {
+    &::before, &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        transform-origin: center center;
+        transform: skew(-25deg);
+        height: 100%;
+        width: 100%;
+    }
+    &::before {
+        z-index: -1;
+        left: -130%;
+        background: var(--mycol-2);
+        transition: left .2s ease-in-out .1s;
+    }
+    &:hover::before {
+        transition: left .4s ease-in-out;
+        left: -30%;
+    }
+    &::after {
+        z-index: -2;
+        left: calc(-100% - 20px);
+        opacity: .8;
+        background: var(--light3);
+        transition: left .4s ease-in-out;
+    }
+    &:hover::after {
+        transition: left .4s ease-in-out;
+        left: calc(100% + 20px);
+    }
+}
+
+/* Ribbon From Right */
+.ribbon-from-right {
+    &::before, &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        transform-origin: center center;
+        transform: skew(-25deg);
+        height: 100%;
+        width: 100%;
+    }
+    &::before {
+        z-index: -1;
+        right: -130%;
+        background: var(--mycol-2);
+        transition: right .2s ease-in-out .1s;
+    }
+    &:hover::before {
+        transition: right .4s ease-in-out;
+        right: -30%;
+    }
+    &::after {
+        z-index: -2;
+        right: calc(-100% - 20px);
+        opacity: .8;
+        background: var(--light3);
+        transition: right .4s ease-in-out;
+    }
+    &:hover::after {
+        transition: right .4s ease-in-out;
+        right: calc(100% + 20px);
+    }
+}

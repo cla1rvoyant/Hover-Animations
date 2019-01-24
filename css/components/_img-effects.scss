@@ -1,0 +1,113 @@
+/* Round Border */
+.round-border {
+    transition: border-radius .2s ease-in-out;
+    &:hover{
+        border-radius: 50%;
+    }
+}
+
+/* Round & Grow */
+.round-and-grow {
+    transition: all .2s ease-in-out;
+    &:hover{
+        border-radius: 50%;
+        transform: scale(1.15);
+    }
+}
+
+/* Squaricle */
+.squaricle {
+    transition: all .2s ease-in-out;
+    &:hover{
+        border-radius: 15px;
+    }
+}
+
+/* Squaricle & Grow */
+.squaricle-and-grow {
+    transition: all .2s ease-in-out;
+    &:hover{
+        border-radius: 15px;
+        transform: scale(1.15);
+    }
+}
+
+/* Flip Vertical */
+.flip-vertical {
+    transition: all 1s ease-in-out;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+        top: 0;
+        left: 0;
+        background: var(--mycol-1);
+        opacity: 0;
+        transform: rotateX(-180deg);
+    }
+    &:hover {
+        transform: rotateX(180deg);
+        &::before {
+            transform: rotateX(0);
+            opacity: .5;
+        }
+    }
+}
+
+/* Flip Horizontal */
+.flip-horizontal {
+    transition: all 1s ease-in-out;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+        top: 0;
+        left: 0;
+        background: var(--mycol-1);
+        opacity: 0;
+        transform: rotateY(-180deg);
+    }
+    &:hover {
+        transform: rotateY(180deg);
+        &::before {
+            transform: rotate(0);
+            opacity: .5;
+        }
+    }
+}
+
+/* Flip Diagonal */
+.flip-diagonal {
+    transition: all 1s ease-in-out;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+        top: 0;
+        left: 0;
+        background: var(--mycol-1);
+        opacity: 0;
+        transform: rotateY(-180deg) rotateX(-180deg);
+    }
+    &:hover {
+        transform: rotateY(180deg) rotateX(180deg);
+        &::before {
+            transform: rotate(0) rotateX(0);
+            opacity: .5;
+        }
+    }
+}
+
+/* Depth */
+.depth {
+    transition: all .2s ease-in-out;
+    &:hover {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.21);
+    }
+}
