@@ -259,6 +259,7 @@
   .uline, uline {
     text-decoration: underline;
     text-transform: capitalize;
+    text-decoration-color: var(--mycol-1);
   }
   
   .stretch_it {
@@ -325,7 +326,7 @@
   
   #version {
     position: relative;
-    top: 18px;
+    top: 1rem;
     opacity: 0;
     -webkit-transform: translateX(10px);
     transform: translateX(10px);

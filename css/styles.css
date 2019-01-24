@@ -656,6 +656,8 @@ h3 {
 .uline, uline {
   text-decoration: underline;
   text-transform: capitalize;
+  -webkit-text-decoration-color: var(--mycol-1);
+          text-decoration-color: var(--mycol-1);
 }
 
 .stretch_it {
@@ -722,7 +724,7 @@ h3 {
 
 #version {
   position: relative;
-  top: 18px;
+  top: 1rem;
   opacity: 0;
   -webkit-transform: translateX(10px);
   transform: translateX(10px);
@@ -1239,7 +1241,7 @@ body.loaded navbar {
 
 .git {
   position: fixed;
-  font-size: .9em;
+  font-size: 1em;
   bottom: 2em;
   left: .8em;
   background: transparent;
